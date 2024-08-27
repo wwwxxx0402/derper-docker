@@ -24,7 +24,7 @@ ENV DERP_HTTP_PORT 80
 ENV DERP_VERIFY_CLIENTS false
 ENV DERP_VERIFY_CLIENT_URL ""
 
-COPY --from=build /go/bin/derper .
+COPY --from=builder /go/bin/derper .
 
 CMD /app/derper --hostname=$DERP_DOMAIN \
     --certmode=$DERP_CERT_MODE \
